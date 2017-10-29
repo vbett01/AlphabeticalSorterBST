@@ -1,0 +1,87 @@
+README
+Title: 	Binary search tree implementation
+Author: Vincent Bett
+PURPOSE:
+	The purpose of this program is to implement a 
+	binary search tree using pointers and nodes.
+	The program then uses that tree to sort strings
+	Alphabetically.
+Files Provided:
+	StringBST.cpp
+		The implementation file for the binary tree
+	StringBST.h
+		Header file for StringBST.cpp
+	Alphabetizer.cpp
+		A file that uses the binary tree to sort strings 
+		based on user preference.
+	Alphabetizer.h
+		Header file for Alphabetizer.cpp
+	BSTTesting.cpp
+		File to test the Binary tree
+	AlphaTesting.cpp
+		File to test the Alphabetizer.
+	main.cpp
+		File that calls both the alphabetizer and stringBST 
+		and uses them to sort strings that are inputer by the user.
+		
+Data structures used.
+	A binary search tree in order to store the strings and to speed 
+	up search. An array in the tester file to store the strings to 
+	be passed onto the binary tree.
+Algorithm for insert:
+        For this function I add the element and a root pointer.
+        I first check if the root is empty. If it is then I make
+        a new node and add it there. If the root is not null then check 
+        if my element is greater than the value of the element pointed to 
+        by the root pointer. If it is, then I go to the left of the root
+        pointer. If my element is less than the value pointed to by the 
+        root then I go right.
+        If the element is the same as the value pointed to by the pointer
+        then I just increment the instances of that element.
+Algorithm for remove:
+        I pass in a pointer to a node and an element to be removed.
+        If the pointer is empty, i just return it.
+        If my element is less than the element pointed to by the pointer
+        then I go left by passing the left of the pointer to the function
+        recursively.
+        If my element is bigger, then I go right.
+        If none of these conditions are true then I have found the node to
+        remove.
+        I'll then pass this node to a helper function that does the
+        deletion.
+        In my helper function I check if there is more than one instance
+        of the element to delelte. If there are then I just decrement
+        the instances.
+        If not, then I check if the left and right pointers are not null.
+        If both are null then I just remove the node and return the updated
+        pointer.
+        If both  left and right are not null then I check if left is null
+        and right is not. If that's the case then i creare a temporary 
+        pointer to hold my node and update my node to point to the      
+        next right pointer. I then delete the node poiinted to by the 
+        temporary pointer and return the updated pointer. 
+        I also do the same for my right is null but left is not I use the
+        same technique.
+        If both the left and right are not NULL then I create a new temp
+        pointer and make it point to the pointer with the minimum value
+        that's to the right of my pointer. The value of my node gets the 
+        value of what the temp pointer is pointing to. I then call my 
+        delete function recursively while passing the right of my node and
+        the value of temp.  
+	
+Method of testing.
+	Binary tree.
+		For the binary tree, I created a new file that called the 
+		different functions of the binary search tree and either 
+		added, removed or printed elements in the tree.
+	Alphabetizer.
+		For the alphabetizer, since most of what the program did 
+		was accepting input from the user, all I did was to test 
+		it from the command prompt. I also Wrote some tester files 
+		that I called from the command prompt.
+To compile Type
+        Make
+Acknowlwedgements:
+        MyCodeSchool channel on youtube. It has great videos that teach on how
+        to call functions recursivelly.
+        stackoverflow.com
